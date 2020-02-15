@@ -1,6 +1,8 @@
 package team7.finderfeast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.mongodb.ConnectionString;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.ServerAddress;
@@ -23,7 +25,13 @@ import java.util.List;
 public class RestaurantConnection extends AppCompatActivity {
     private String url = "https://developers.zomato.com/api/v2.1/";
     private String keyCode = "d3b965d17f5d9cdd0c08e4d1d6ed47e2";
-    MongoClientURI connectionString = new MongoClientURI("mongodb://localhost:27017");
-    MongoClient mongoClient = new MongoClient(connectionString);
-
+    MongoClientURI connString = new MongoClientURI(" MongoClientURI connectionString = new MongoClientURI(\"mongodb://localhost:27017\");");
+    MongoClient mongoClient = new MongoClient(connString);
+    MongoDatabase database = mongoClient.getDatabase("FinderFeastDB");
+    MongoCollection<Document> collection = database.getCollection("Users");
+//    Document doc = new Document("name", "MongoDB")
+//            .append("type", "database")
+//            .append("count", 1)                               THIS IS HOW YOU ADD DOCUMENTS TO THE DATABASE
+//            .append("info", new Document("x", 203).append("y", 102));
+//    collection.insertOne(doc);
 }
