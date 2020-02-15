@@ -25,7 +25,7 @@ import java.util.List;
 public class RestaurantConnection extends AppCompatActivity {
     private String url = "https://developers.zomato.com/api/v2.1/";
     private String keyCode = "d3b965d17f5d9cdd0c08e4d1d6ed47e2";
-    MongoClientURI connString = new MongoClientURI(" MongoClientURI connectionString = new MongoClientURI(\"mongodb://localhost:27017\");");
+    MongoClientURI connString = new MongoClientURI("mongodb+srv://pro200:pro200password@cluster0-jaeea.mongodb.net/test?retryWrites=true&w=majority");
     MongoClient mongoClient = new MongoClient(connString);
     MongoDatabase database = mongoClient.getDatabase("FinderFeastDB");
     MongoCollection<Document> collection = database.getCollection("Users");
