@@ -7,6 +7,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RestaurantConnection RC = new RestaurantConnection();
         requestPermission();
         client = LocationServices.getFusedLocationProviderClient(this);
-        RC.NewUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
+        RestaurantConnection RC = new RestaurantConnection();
+        RC.NewUser("Daniil","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
