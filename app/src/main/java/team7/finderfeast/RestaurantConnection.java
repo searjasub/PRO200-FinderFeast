@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.MongoException;
 import com.mongodb.ServerAddress;
 
 import com.mongodb.client.MongoDatabase;
@@ -31,7 +32,25 @@ public class RestaurantConnection extends AppCompatActivity {
     MongoCollection<Document> collection = database.getCollection("Users");
 //    Document doc = new Document("name", "MongoDB")
 //            .append("type", "database")
-//            .append("count", 1)                               THIS IS HOW YOU ADD DOCUMENTS TO THE DATABASE
+//            .append("count", 1)         /*THIS IS HOW YOU ADD DOCUMENTS TO THE DATABASE*/
 //            .append("info", new Document("x", 203).append("y", 102));
 //    collection.insertOne(doc);
+
+    public boolean NewUser(String firstName, String lastName, String username, String password, String email){
+        try{
+            Document doc = new Document("username", username)
+                    .append("password", password)
+                    .append("firstName", firstName)
+                    .append("lastName", lastName)
+                    .append("email",email);
+            collection.insertOne(doc);
+        } catch(MongoException e){
+            System.out.println("There has been a Mongo Exception in NewUser");
+            return false;
+        }
+        return true;
+    }
+
+
+
 }
