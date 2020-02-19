@@ -1,9 +1,10 @@
 package team7.finderfeast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -14,11 +15,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void signUp(View view) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 
     public void login(View view) {
 
-
-
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
     }
 }
