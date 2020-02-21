@@ -1,5 +1,11 @@
 package team7.finderfeast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -24,7 +30,7 @@ import cz.msebera.android.httpclient.Header;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
     private FusedLocationProviderClient client;
 
@@ -59,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-//        RC.NewUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
+        DatabaseConnection DBC = new DatabaseConnection();
+        DBC.AddUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
