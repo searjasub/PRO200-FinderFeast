@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        RC.NewUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
