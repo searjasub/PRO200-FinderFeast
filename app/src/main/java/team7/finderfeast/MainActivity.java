@@ -65,7 +65,8 @@ public class MainActivity extends FragmentActivity {
                 });
             }
         });
-//        RC.NewUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
+        DatabaseConnection DBC = new DatabaseConnection();
+        DBC.AddUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
