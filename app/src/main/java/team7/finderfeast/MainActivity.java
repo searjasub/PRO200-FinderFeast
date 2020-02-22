@@ -30,7 +30,7 @@ import cz.msebera.android.httpclient.Header;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient client;
 
@@ -48,24 +48,11 @@ public class MainActivity extends FragmentActivity {
                     return;
                 }
                 RequestParams rp = new RequestParams();
-                RestaurantConnection.get("categories", rp, new JsonHttpResponseHandler(){
-                    @Override
-                    public void onSuccess(int statusCode, Header[] header, JSONObject response) {
-                        // If the response is JSONObject instead of expected JSONArray
-                        Log.d("asd", "---------------- this is response : " + response);
-                        TextView textView = findViewById(R.id.categories);
-                        textView.setText(response.toString());
-                        try {
-                            JSONObject serverResp = new JSONObject(response.toString());
-                        } catch (JSONException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
-                    }
-                });
+                TextView textbox = findViewById(R.id.categories);
+                textbox.setText("Please wait....");
+                textbox.setText(RestaurantConnection.getNearby(40, -111, 0));
             }
         });
-//        RC.NewUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
