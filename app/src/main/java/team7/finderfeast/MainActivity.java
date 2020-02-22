@@ -30,7 +30,7 @@ import cz.msebera.android.httpclient.Header;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient client;
 
@@ -66,7 +66,7 @@ public class MainActivity extends FragmentActivity {
             }
         });
         DatabaseConnection DBC = new DatabaseConnection();
-        DBC.AddUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
+//        DBC.AddUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
