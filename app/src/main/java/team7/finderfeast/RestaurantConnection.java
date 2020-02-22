@@ -41,7 +41,7 @@ public class RestaurantConnection  {
         public static String getNearby(double lat, double lon, double radius) {
             RequestParams rp = new RequestParams();
             if(radius == 0) {
-                radius = 10;
+                radius = 1000;
             }
             rp.add("lat", Double.toString(lat));
             rp.add("lon", Double.toString(lon));

@@ -49,7 +49,8 @@ public class MainActivity extends FragmentActivity {
                 }
                 RequestParams rp = new RequestParams();
                 TextView textbox = findViewById(R.id.categories);
-                textbox.setText(RestaurantConnection.get("categories", rp));
+                textbox.setText("Please wait....");
+                textbox.setText(RestaurantConnection.getNearby(40, -111, 0));
             }
         });
 //        DatabaseConnection DBC = new DatabaseConnection();
