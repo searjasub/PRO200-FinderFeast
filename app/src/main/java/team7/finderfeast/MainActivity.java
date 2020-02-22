@@ -48,25 +48,12 @@ public class MainActivity extends FragmentActivity {
                     return;
                 }
                 RequestParams rp = new RequestParams();
-                RestaurantConnection.get("categories", rp, new JsonHttpResponseHandler(){
-                    @Override
-                    public void onSuccess(int statusCode, Header[] header, JSONObject response) {
-                        // If the response is JSONObject instead of expected JSONArray
-                        Log.d("asd", "---------------- this is response : " + response);
-                        TextView textView = findViewById(R.id.categories);
-                        textView.setText(response.toString());
-                        try {
-                            JSONObject serverResp = new JSONObject(response.toString());
-                        } catch (JSONException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
-                    }
-                });
+                TextView textbox = findViewById(R.id.categories);
+                textbox.setText(RestaurantConnection.get("categories", rp));
             }
         });
-        DatabaseConnection DBC = new DatabaseConnection();
-        DBC.AddUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
+//        DatabaseConnection DBC = new DatabaseConnection();
+//        DBC.AddUser("Dan","Baydak","Tikalaka","password","baydadan001@gmail.com");
         Button button = findViewById(R.id.getLocation);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
