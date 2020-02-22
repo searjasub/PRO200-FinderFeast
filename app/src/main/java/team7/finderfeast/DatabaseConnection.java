@@ -21,8 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 //import com.mongodb.client.result.UpdateResult;
 //import java.util.ArrayList;
 //import java.util.List;
-//
-//public class DatabaseConnection  extends AppCompatActivity {
+
+public class DatabaseConnection  extends AppCompatActivity {
 //    private String url = "https://developers.zomato.com/api/v2.1/";
 //    private String keyCode = "d3b965d17f5d9cdd0c08e4d1d6ed47e2";
 //    MongoClientURI connString = new MongoClientURI("mongodb+srv://pro200:pro200password@cluster0-jaeea.mongodb.net/test?retryWrites=true&w=majority");
@@ -49,4 +49,4 @@ import androidx.appcompat.app.AppCompatActivity;
 //        }
 //        return true;
 //    }
-//}
+}
