@@ -1,4 +1,4 @@
-package team7.finderfeast;
+//package team7.finderfeast;
 import androidx.appcompat.app.AppCompatActivity;
 
 //import com.mongodb.ConnectionString;
